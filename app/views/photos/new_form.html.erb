@@ -1,10 +1,13 @@
 <h1>new photo</h1>
 
 <form action="http://localhost:3000/create_photo" >
-<label>Caption</label>
-<input type="text" name="caption" >
 
-<label for="">URL</label>
-<input type="text" name="url" >
+<label for="photo_source">Image URL:</label>
+<input id="photo_source" type="text" name="url" >
+
+<label for="photo_caption">Caption:</label>
+<input id="photo_caption" type="text" name="caption" >
+
+
 <button>Create Photo</button>
 </form>

@@ -15,6 +15,14 @@ class PhotosController < ApplicationController
 
   end
 
+  def edit_photo
+    p = Photo.find_by({ :id => params[:id] })
+    p.caption = params[:caption]
+    p.source = params[:url]
+    p.save
+    redirect_to("/photos")
+  end
+
   def new_form
 
   end
@@ -26,6 +34,12 @@ class PhotosController < ApplicationController
   p.save
 
   redirect_to("/photos")
+  end
+
+  def delete_photo
+    @photo = Photo.find_by({ :id => params[:id] })
+    @photo.destroy
+redirect_to("/photos")
   end
 
 end
